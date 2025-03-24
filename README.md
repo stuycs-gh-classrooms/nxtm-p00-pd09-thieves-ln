@@ -26,10 +26,11 @@ All projects will require the following:
 ## Phase 0: Force Selection, Analysis & Plan
 ---------- 
 
-#### Custom Force: NAME OF YOUR FORCE
-
+#### Custom Force: Frictional Force
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
+![image](https://github.com/user-attachments/assets/822cda7d-acea-455c-a18c-286117fc04bb)
+
 
 YOUR ANSWER HERE
 
