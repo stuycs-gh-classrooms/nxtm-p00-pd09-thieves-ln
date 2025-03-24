@@ -29,12 +29,8 @@ All projects will require the following:
 #### Custom Force: Frictional Force
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
-<break>
 ![image](https://github.com/user-attachments/assets/822cda7d-acea-455c-a18c-286117fc04bb)
-
-
-YOUR ANSWER HERE
-
+Normal Force can be calculated with mgcos(beta) and depending on the type of friction (static vs. kenetic), the constant will vary. 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
   - YOUR ANSWER HERE
