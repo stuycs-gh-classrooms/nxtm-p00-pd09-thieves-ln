@@ -29,6 +29,7 @@ All projects will require the following:
 #### Custom Force: Frictional Force
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
+<break>
 ![image](https://github.com/user-attachments/assets/822cda7d-acea-455c-a18c-286117fc04bb)
 
 
