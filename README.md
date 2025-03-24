@@ -1,9 +1,9 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/rXX1_Uiw)
 ## Project 00
 ### NeXTCS
-### Period: 09
-## Name0: Isabel Zheng
-## Name1: Mia Shi
+### Period: 
+## Name0: Mia Shi
+## Name1: Isabel Zheng
 ---
 
 This project will be completed in phases. The first phase will be to work on this document. Use github-flavoured markdown. (For more markdown help [click here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) )
@@ -19,7 +19,7 @@ All projects will require the following:
   - `1`: Gravity
   - `2`: Spring Force
   - `3`: Drag
-  - `4`: Custom Force
+  - `4`: Frictional Force
   - `5`: Combination
 
 
@@ -27,25 +27,26 @@ All projects will require the following:
 ---------- 
 
 #### Custom Force: Frictional Force
+
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
-![image](https://github.com/user-attachments/assets/822cda7d-acea-455c-a18c-286117fc04bb)
-Normal Force can be calculated with mgcos(beta) and depending on the type of friction (static vs. kenetic), the constant will vary. 
+
+![alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVEKU0hPyU1Ogn7_5JpGfjqgNOYr8B1FIMQ&s)
+
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
-  - YOUR ANSWER HERE
+  - N/A
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
-  - YOUR ANSWER HERE
-
+  - μ: Coefficient of friction (kinetic & static)
 - Does this force require any new information to be added to the `Orb` class? If so, what is it and what data type will you use?
-  - YOUR ANSWER HERE
+  - N: Normal Force (mgcos(theta))
 
 - Does this force interact with other `Orbs`, or is it applied based on the environment?
-  - YOUR ANSWER HERE
+  - Yes (collision)
 
 - In order to calculate this force, do you need to perform extra intermediary calculations? If so, what?
-  - YOUR ANSWER HERE
+  - nawh
 
 --- 
 
@@ -63,7 +64,7 @@ YOUR ANSWER HERE
 
 ### Simulation 3: Drag
 Describe what your drag simulation will look like. Explain how it will be setup, and how it should behave while running.
-
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVEKU0hPyU1Ogn7_5JpGfjqgNOYr8B1FIMQ&s
 YOUR ANSWER HERE
 
 --- 
@@ -75,7 +76,7 @@ YOUR ANSWER HERE
 
 --- 
 
-### Simulation 5: Combination
+### Simulation 5: Combination (grav-ing)
 Describe what your combination simulation will look like. Explain how it will be setup, and how it should behave while running.
 
 YOUR ANSWER HERE
