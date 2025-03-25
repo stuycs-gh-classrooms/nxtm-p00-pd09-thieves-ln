@@ -52,7 +52,7 @@ What is the formula for your force? Including descriptions/definitions for the s
 
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
-
+![alt text](https://i.ytimg.com/vi/N__3zLT8zU0/maxresdefault.jpg)
 --- 
 
 ### Simulation 2: Spring
