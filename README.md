@@ -53,31 +53,38 @@ What is the formula for your force? Including descriptions/definitions for the s
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
 ![alt text](https://i.ytimg.com/vi/N__3zLT8zU0/maxresdefault.jpg)
+
+With a fixed orb in the center acting as the Earth, we can simulate orbital motion with the F = G(m1)(m2)/(r^2) equation. If necessary, we can also 
+simulate centripetal force as shown above. The orbs will move in a "circular" shape around the center orb and based on the size and distance from the center, 
+it will move differently. 
 --- 
 
 ### Simulation 2: Spring
 Describe what your spring simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+The spring simulation would look similar to our work from previous labs. Using the F = kx (AB hat) formula, we can model the spring forces between moving orbs. 
+For the setup, there will be a couple orbs on screen, each moving, and the lines between the centers of orbs will stretch. 
 
 --- 
 
 ### Simulation 3: Drag
 Describe what your drag simulation will look like. Explain how it will be setup, and how it should behave while running.
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShVEKU0hPyU1Ogn7_5JpGfjqgNOYr8B1FIMQ&s
-YOUR ANSWER HERE
+
+Similar to the Spring simulation, this section will also reference our labs. We will use borders to represent distance and compare the speed of certain orbs. 
+Using the drag formula coded previously, we can also control the drag coefficient. Our setup consists of a couple orbs, falling down the bottom of the screen 
+in a predefined speed. Additionally, we will color-code the background to help compare the distance each orb has traveled. 
 
 --- 
 
 ### Simulation 4: Custom force
 Describe what your Custom force simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
-
+We are hoping to simulate frictional force. Frictional force requires the usage of mg and possibly, cos(theta). Moving alongside the surfaces of the wall, the frictional
+force would be forced to act against the smooth flow of movement, pushing back. For this, we may need to create a wall in the background to control the cordinates. 
 --- 
 
 ### Simulation 5: Combination (grav-ing)
 Describe what your combination simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+Using the previous functions, we hope to find a way to merge spring force and gravity. When there is a perfect no acceleration position, gravity (mg) may be equal to kx.
 
