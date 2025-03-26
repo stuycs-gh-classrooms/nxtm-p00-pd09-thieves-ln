@@ -79,8 +79,8 @@ in a predefined speed. Additionally, we will color-code the background to help c
 ### Simulation 4: Custom force
 Describe what your Custom force simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-We are hoping to simulate frictional force. Frictional force requires the usage of mg and possibly, cos(theta). Moving alongside the surfaces of the wall, the frictional
-force would be forced to act against the smooth flow of movement, pushing back. For this, we may need to create a wall in the background to control the cordinates. 
+****We are hoping to simulate frictional force. Frictional force requires the usage of mg and possibly, cos(theta). Moving alongside the surfaces of the wall, the frictional
+force would be forced to act against the smooth flow of movement, pushing back. For this, we may need to create a wall in the background to control the cordinates. ****
 --- 
 
 ### Simulation 5: Combination (grav-ing)
