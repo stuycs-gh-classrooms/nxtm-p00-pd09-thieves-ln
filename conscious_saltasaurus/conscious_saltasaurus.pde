@@ -16,8 +16,19 @@ int DRAGF = 3;
 boolean[] toggles = new boolean[4];
 String[] modes = {"Moving", "Bounce", "Gravity", "Drag"};
 
+
+void setup(){
+  size (500,500);
+}
+
+void display(){
+  
+}
 void keyPressed(){
   if (key == UP){
     D_COEF += 0.1;
+  }
+  if (key == DOWN){
+    D_COEF -= 0.1;
   }
 }
