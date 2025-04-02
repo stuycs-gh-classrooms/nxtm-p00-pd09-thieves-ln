@@ -112,10 +112,6 @@ class Orb {
              <= (this.bsize/2 + other.bsize/2) );
   }//collisionCheck
 
-  boolean isSelected(float x, float y) {
-    float d = dist(x, y, center.x, center.y);
-    return d < bsize/2;
-  }//isSelected
 
   void setColor() {
     color c0 = color(0, 255, 255);
@@ -131,5 +127,4 @@ class Orb {
     fill(0);
     //text(mass, center.x, center.y);
   }//display
-
-}//Orb
+}//Ball
