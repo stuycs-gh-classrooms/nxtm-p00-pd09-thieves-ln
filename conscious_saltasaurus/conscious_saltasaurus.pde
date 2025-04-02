@@ -41,6 +41,11 @@ void draw() {
     springForce = o1.getSpring (o1.previous, SPRING_LENGTH, SPRING_K);
     o1.applyForce (springForce);
   }
+  
+  if (toggles[BOUNCE]) {
+    o0.move(true); 
+    o1.move(true);
+  }
 
   o0.move(toggles[BOUNCE]);
   o1.move(toggles[BOUNCE]);
@@ -104,3 +109,4 @@ void displayMode() {
     x+= w+5;
   }
 }//display
+
