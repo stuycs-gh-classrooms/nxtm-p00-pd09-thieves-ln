@@ -77,11 +77,11 @@ void draw() {
 }//draw
 
 void displayCentripetalForce(PVector forceDirection) {
-  //orb0 w/ green line
+  line (earth.center.x, earth.center.y, o0.center.x, o0.center.y);
+  line (earth.center.x, earth.center.y, o1.center.x, o1.center.y);
   PVector forceEnd = PVector.add(o0.center, forceDirection);  // Calculate the end point of the force vector
   stroke(0, 255, 0);  // Green color for force direction
   line(earth.center.x, earth.center.y, forceEnd.x, forceEnd.y);  // Draw the force vector
-  //orb1 w/ blue line
   PVector forceDirection1 = PVector.sub (earth.center, o1.center); //direction
   forceDirection1.normalize();
   forceDirection1.mult (o1.velocity.mag() * o1.velocity.mag() / o1.center.dist (earth.center));
@@ -105,7 +105,7 @@ void makeOrbs() {
   o3.previous = o2;
   
   float distanceToEarth = earth.center.dist(o0.center);
-  float initialVelocity = sqrt (G_CONSTANT * earth.mass / distanceToEarth); // v = sqrt (GM/r)
+  float initialVelocity = sqrt (G_CONSTANT * earth.mass / distanceToEarth);
   o0.velocity = new PVector (0, initialVelocity);
   o1.velocity = new PVector (0, initialVelocity);
 }
@@ -156,5 +156,3 @@ void displayMode() {
     x+= w+5;
   }
 }//display
-
-
