@@ -5,6 +5,7 @@ float MIN_MASS = 10;
 float MAX_MASS = 100;
 float G_CONSTANT = 1;
 float D_COEF = 0.1;
+float ALTITUDE = 2; //optional
 
 int SPRING_LENGTH = 50;
 float  SPRING_K = 0.005;
@@ -14,8 +15,9 @@ int BOUNCE = 1;
 int GRAVITY = 2;
 int DRAGF = 3;
 int SPRING = 4;
-boolean[] toggles = new boolean[5];
-String[] modes = {"Moving", "Bounce", "Gravity", "Drag", "Spring"};
+int CENTRIPETAL = 5;
+boolean[] toggles = new boolean[6];
+String[] modes = {"Moving", "Bounce", "Gravity", "Drag", "Spring", "Centripetal"};
 
 FixedOrb earth;
 OrbNode o0, o1, o2, o3;
@@ -23,7 +25,7 @@ OrbNode o0, o1, o2, o3;
 void setup() {
   size(600, 600);
 
-  earth = new FixedOrb(width/2, height * 200, 1, 20000);
+  earth = new FixedOrb(width/2, height/2, 50, 20000);
   makeOrbs();
 }//setup
 
@@ -34,6 +36,7 @@ void draw() {
 
   o0.display();
   o1.display();
+  earth.display();
   
   if (toggles[MOVING]) {
      o0.move(true);
@@ -63,8 +66,27 @@ void draw() {
     PVector gravityForce = o1.getGravity (o1.previous, G_CONSTANT); 
     o1.applyForce (gravityForce); 
   }
-
+  
+  if (toggles[CENTRIPETAL]) {
+    PVector centripetalForce = o0.getCentripetalForce (ALTITUDE);
+    o0.applyForce (centripetalForce);
+    PVector centripetalForce1 = o1.getCentripetalForce (ALTITUDE);
+    o1.applyForce (centripetalForce1);
+    displayCentripetalForce(centripetalForce);
+  }
 }//draw
+
+void displayCentripetalForce(PVector forceDirection) {
+  PVector forceEnd = PVector.add(o0.center, forceDirection);  // Calculate the end point of the force vector
+  stroke(0, 255, 0);  // Green color for force direction
+  line(earth.center.x, earth.center.y, forceEnd.x, forceEnd.y);  // Draw the force vector
+  PVector forceDirection1 = PVector.sub (earth.center, o1.center); //direction
+  forceDirection1.normalize();
+  forceDirection1.mult (o1.velocity.mag() * o1.velocity.mag() / o1.center.dist (earth.center));
+  PVector forceEnd1 = PVector.add (o1.center, forceDirection1);
+  stroke (0, 0, 255);
+  line (earth.center.x, earth.center.y, forceEnd1.x, forceEnd1.y);
+}
 
 
 void makeOrbs() {
@@ -79,6 +101,11 @@ void makeOrbs() {
   o2.previous = o1;
   o2.next = o3;
   o3.previous = o2;
+  
+  float distanceToEarth = earth.center.dist(o0.center);
+  float initialVelocity = sqrt (G_CONSTANT * earth.mass / distanceToEarth);
+  o0.velocity = new PVector (0, initialVelocity);
+  o1.velocity = new PVector (0, initialVelocity);
 }
 
 
@@ -97,6 +124,9 @@ void keyPressed() {
   }
   if (key == 's') {
     toggles[SPRING] = !toggles[SPRING];
+  }
+  if (key == 'c') {
+    toggles[CENTRIPETAL] = !toggles[CENTRIPETAL];
   }
   if (key == 'r') {
     makeOrbs();
@@ -124,4 +154,5 @@ void displayMode() {
     x+= w+5;
   }
 }//display
+
 
