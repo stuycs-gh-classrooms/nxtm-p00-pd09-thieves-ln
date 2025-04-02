@@ -77,9 +77,11 @@ void draw() {
 }//draw
 
 void displayCentripetalForce(PVector forceDirection) {
+  //orb0 w/ green line
   PVector forceEnd = PVector.add(o0.center, forceDirection);  // Calculate the end point of the force vector
   stroke(0, 255, 0);  // Green color for force direction
   line(earth.center.x, earth.center.y, forceEnd.x, forceEnd.y);  // Draw the force vector
+  //orb1 w/ blue line
   PVector forceDirection1 = PVector.sub (earth.center, o1.center); //direction
   forceDirection1.normalize();
   forceDirection1.mult (o1.velocity.mag() * o1.velocity.mag() / o1.center.dist (earth.center));
