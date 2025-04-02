@@ -78,6 +78,19 @@ class Orb {
 
     return direction;
   }//getSpring
+  
+  PVector getCentripetalForce (float altitude) {
+    //F = mv^2/r & the first portion is m/r (r = orbit distance + radius of orb)
+    float r = this.center.dist(earth.center) + altitude;
+    //getting magnitude of vector so it can be squared after
+    float velocityMagnitude = this.velocity.mag(); 
+    float forceMagnitude = this.mass * velocityMagnitude * velocityMagnitude / r;
+    //preserving direction for velocity 
+    PVector cForce = PVector.sub (earth.center, this.center);
+    cForce.normalize();
+    cForce.mult(forceMagnitude);
+    return cForce;
+  }
 
   boolean yBounce(){
     if (center.y > height - bsize/2) {
@@ -96,12 +109,12 @@ class Orb {
   boolean xBounce() {
     if (center.x > width - bsize/2) {
       center.x = width - bsize/2;
-      velocity.x *= -1;
+      velocity.x *= -0.9;
       return true;
     }
     else if (center.x < bsize/2) {
       center.x = bsize/2;
-      velocity.x *= -1;
+      velocity.x *= -0.9;
       return true;
     }
     return false;
