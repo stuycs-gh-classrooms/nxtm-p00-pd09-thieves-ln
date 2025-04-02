@@ -105,7 +105,7 @@ void makeOrbs() {
   o3.previous = o2;
   
   float distanceToEarth = earth.center.dist(o0.center);
-  float initialVelocity = sqrt (G_CONSTANT * earth.mass / distanceToEarth);
+  float initialVelocity = sqrt (G_CONSTANT * earth.mass / distanceToEarth); // v = sqrt (GM/r)
   o0.velocity = new PVector (0, initialVelocity);
   o1.velocity = new PVector (0, initialVelocity);
 }
