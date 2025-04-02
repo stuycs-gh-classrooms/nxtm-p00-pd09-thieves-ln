@@ -34,6 +34,16 @@ void draw() {
 
   o0.display();
   o1.display();
+  
+  if (toggles[MOVING]) {
+     o0.move(true);
+     o1.move(true);
+  }
+  
+  if (toggles[BOUNCE]) {
+    o0.move(true); 
+    o1.move(true);
+  }
 
   if (toggles[SPRING]) {
     PVector springForce = o0.getSpring (o0.next, SPRING_LENGTH, SPRING_K);
@@ -42,13 +52,18 @@ void draw() {
     o1.applyForce (springForce);
   }
   
-  if (toggles[BOUNCE]) {
-    o0.move(true); 
-    o1.move(true);
+  if (toggles[DRAGF]) {
+    PVector dragForce = o0.getDragForce(D_COEF);
+    o0.applyForce (dragForce);
+    dragForce = o1.getDragForce (D_COEF);
+    o1.applyForce (dragForce); 
+  }
+  
+  if (toggles[GRAVITY]) {
+    PVector gravityForce = o1.getGravity (o1.previous, G_CONSTANT); 
+    o1.applyForce (gravityForce); 
   }
 
-  o0.move(toggles[BOUNCE]);
-  o1.move(toggles[BOUNCE]);
 }//draw
 
 
