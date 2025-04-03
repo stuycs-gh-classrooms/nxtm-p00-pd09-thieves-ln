@@ -72,13 +72,20 @@ void draw() {
     o0.applyForce (centripetalForce);
     PVector centripetalForce1 = o1.getCentripetalForce (ALTITUDE);
     o1.applyForce (centripetalForce1);
-    displayCentripetalForce(centripetalForce);
+    displayCentripetalForce();
   }
 }//draw
 
-void displayCentripetalForce(PVector forceDirection) {
+void displayCentripetalForce () {
+  stroke (0);
   line (earth.center.x, earth.center.y, o0.center.x, o0.center.y);
   line (earth.center.x, earth.center.y, o1.center.x, o1.center.y);
+}
+  
+/*
+void displayCentripetalForce0(PVector forceDirection) {
+ line (earth.center.x, earth.center.y, o0.center.x, o0.center.y);
+ line (earth.center.x, earth.center.y, o1.center.x, o1.center.y);
   PVector forceEnd = PVector.add(o0.center, forceDirection);  // Calculate the end point of the force vector
   stroke(0, 255, 0);  // Green color for force direction
   line(earth.center.x, earth.center.y, forceEnd.x, forceEnd.y);  // Draw the force vector
@@ -86,10 +93,16 @@ void displayCentripetalForce(PVector forceDirection) {
   forceDirection1.normalize();
   forceDirection1.mult (o1.velocity.mag() * o1.velocity.mag() / o1.center.dist (earth.center));
   PVector forceEnd1 = PVector.add (o1.center, forceDirection1);
-  stroke (0, 0, 255);
-  line (earth.center.x, earth.center.y, forceEnd1.x, forceEnd1.y);
+ stroke (0, 0, 255);
+ line (earth.center.x, earth.center.y, forceEnd1.x, forceEnd1.y);
 }
 
+void displayCentripetalForce1 (PVector forceDirection) {
+  PVector forceEnd = PVector.add(o1.center, forceDirection);
+  stroke (0, 0, 255);
+  line (earth.center.x, earth.center.y, forceEnd.x, forceEnd.y);
+}
+*/
 
 void makeOrbs() {
   o0 = new OrbNode();
