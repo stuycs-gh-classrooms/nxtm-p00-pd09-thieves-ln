@@ -36,7 +36,6 @@ void draw() {
 
   o0.display();
   o1.display();
-  earth.display();
   
   if (toggles[MOVING]) {
      o0.move(true);
@@ -44,8 +43,10 @@ void draw() {
   }
   
   if (toggles[BOUNCE]) {
-    o0.move(true); 
-    o1.move(true);
+    if (toggles[MOVING]) {
+      o0.move(true); 
+      o1.move(true);
+    } 
   }
 
   if (toggles[SPRING]) {
@@ -68,6 +69,7 @@ void draw() {
   }
   
   if (toggles[CENTRIPETAL]) {
+    earth.display();
     PVector centripetalForce = o0.getCentripetalForce (ALTITUDE);
     o0.applyForce (centripetalForce);
     PVector centripetalForce1 = o1.getCentripetalForce (ALTITUDE);
