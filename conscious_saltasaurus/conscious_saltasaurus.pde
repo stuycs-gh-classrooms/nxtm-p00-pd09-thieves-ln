@@ -16,8 +16,9 @@ int GRAVITY = 2;
 int DRAGF = 3;
 int SPRING = 4;
 int CENTRIPETAL = 5;
-boolean[] toggles = new boolean[6];
-String[] modes = {"Moving", "Bounce", "Gravity", "Drag", "Spring", "Centripetal"};
+int CUSTOMF = 6;
+boolean[] toggles = new boolean[7];
+String[] modes = {"Moving", "Bounce", "Gravity", "Drag", "Spring", "Centripetal", "Custom"};
 
 FixedOrb earth;
 OrbNode o0, o1, o2, o3;
@@ -119,10 +120,13 @@ void makeOrbs() {
   o2.next = o3;
   o3.previous = o2;
   
+  //centripetal force initial velocity orbs
   float distanceToEarth = earth.center.dist(o0.center);
   float initialVelocity = sqrt (G_CONSTANT * earth.mass / distanceToEarth);
   o0.velocity = new PVector (0, initialVelocity);
-  o1.velocity = new PVector (0, initialVelocity);
+  float distanceToEarth1 = earth.center.dist(o1.center);
+  float initialVelocity1 = sqrt (G_CONSTANT * earth.mass / distanceToEarth1);
+  o1.velocity = new PVector (0, initialVelocity1);
 }
 
 
@@ -144,6 +148,9 @@ void keyPressed() {
   }
   if (key == 'c') {
     toggles[CENTRIPETAL] = !toggles[CENTRIPETAL];
+  }
+  if (key == 'm') {
+    toggles[CUSTOMF] = !toggles[CUSTOMF];
   }
   if (key == 'r') {
     makeOrbs();
